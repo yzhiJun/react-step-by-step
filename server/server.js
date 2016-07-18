@@ -2,29 +2,56 @@ import express from 'express';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpack from 'webpack';
-import webpackConfig from '../webpack.config.js';
+import webpackConfig from '../webpack.config.dev.js';
 import React from 'react';
 import { match, RouterContext } from 'react-router';
 import routes from '../client/routes';
 import { renderToString } from 'react-dom/server';
+import path from 'path';
 
 const app = express();
-const compiler = webpack(webpackConfig);
 
-app.use(webpackDevMiddleware(compiler, {
-  noInfo: true,
-  publicPath: webpackConfig.output.publicPath
-}));
+// Run Webpack dev server in development mode
+if (process.env.NODE_ENV === 'development') {
+  const compiler = webpack(config);
+  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }));
+  app.use(webpackHotMiddleware(compiler));
+}
 
-app.use(webpackHotMiddleware(compiler));
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
 const renderFullPage = (html) => {
+  // Import Manifests
+  const assetsManifest = global.webpackAssets && JSON.parse(global.webpackAssets);
+
   return `
     <!DOCTYPE html>
     <html>
+    <head>
+      ${
+        process.env.NODE_ENV === 'production' ?
+        `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` :
+        ''
+      }
+    </head>
     <body>
       <div id="app">${html}</div>
-      <script src="/bundle.js"></script>
+      ${
+        process.env.NODE_ENV === 'production' ?
+        `<script
+          src='${
+            assetsManifest['/vendor.js']
+          }'>
+        </script>` :
+        ''
+      }
+      <script
+        src='${
+          process.env.NODE_ENV === 'production' ?
+          assetsManifest['/app.js'] :
+          '/bundle.js'
+        }'>
+      </script>
     </body>
     </html>
   `;
