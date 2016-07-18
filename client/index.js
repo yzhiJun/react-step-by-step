@@ -6,3 +6,14 @@ ReactDOM.render(
   <HelloWorld />,
   document.getElementById('app')
 );
+
+// Enable hot reload where available.
+if (module.hot) {
+  module.hot.accept('./HelloWorld', () => {
+    const NextApp = require('./HelloWorld').default;
+    ReactDOM.render(
+      React.createElement(NextApp),
+      document.getElementById('app')
+    );
+  });
+}
