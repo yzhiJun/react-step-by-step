@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-hot-loader": "^3.0.0-beta.2",
     "webpack": "^2.1.0-beta.19",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.1"

@@ -22,10 +22,7 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Lose the react state when hmr</p>
-        <h2>Counter: {this.state.counter}</h2>
-      </div>
+      <h2>Counter: {this.state.counter}</h2>
    );
   }
 }

@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var config = {
   entry: [
     'webpack-hot-middleware/client',
+    'react-hot-loader/patch',
     './client/index.js',
   ],
   output: {
@@ -21,6 +22,11 @@ var config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development'),
+      }
+    }),
   ],
 };
 
