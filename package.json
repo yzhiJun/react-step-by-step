@@ -1,0 +1,17 @@
+{
+  "name": "react-step-by-step",
+  "version": "1.0.0",
+  "description": "React step by step demo",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "webpack",
+    "babel"
+  ],
+  "author": "Zeejune",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  }
+}
