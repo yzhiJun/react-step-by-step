@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './HelloWorld';
+import App from './App';
 
 ReactDOM.render(
-  <HelloWorld />,
+  <App />,
   document.getElementById('app')
 );
 
 // Enable hot reload where available.
 if (module.hot) {
-  module.hot.accept('./HelloWorld', () => {
-    const NextApp = require('./HelloWorld').default;
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default;
     ReactDOM.render(
       React.createElement(NextApp),
       document.getElementById('app')
