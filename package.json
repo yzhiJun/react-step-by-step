@@ -25,6 +25,7 @@
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "webpack": "^2.1.0-beta.19",
-    "webpack-dev-middleware": "^1.6.1"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.1"
   }
 }

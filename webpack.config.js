@@ -1,5 +1,8 @@
+var webpack = require('webpack');
+
 var config = {
   entry: [
+    'webpack-hot-middleware/client',
     './client/index.js',
   ],
   output: {
@@ -16,6 +19,9 @@ var config = {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
 
 module.exports = config;
