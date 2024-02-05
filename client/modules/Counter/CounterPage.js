@@ -1,6 +1,6 @@
-import React from 'react';
-import { IndexLink, Link } from 'react-router';
-import Counter from './Counter';
+import React from "react";
+import { IndexLink, Link } from "react-router";
+import Counter from "./Counter";
 
 class CounterPage extends React.Component {
   render() {

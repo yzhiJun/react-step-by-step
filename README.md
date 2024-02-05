@@ -1,29 +1,22 @@
-React Step by Step
----
+## React Step by Step
 
 A demo with [React](https://facebook.github.io/react/), [Babel](http://babeljs.io/), and [Webpack](http://webpack.github.io/).
 
 This demo is as minimal as possible while still including Babel and Webpack.
 
-
-Setup
----
+## Setup
 
 ```
 npm install
 ```
 
-
-
-Usage
----
+## Usage
 
 1. `npm start`
 
 2. Open [http://localhost:3000/](http://localhost:3000/).
 
-Steps
----
+## Steps
 
 1. [getting-started](https://github.com/yzhiJun/react-step-by-step/tree/01-getting-started)
 
@@ -42,4 +35,3 @@ Steps
 8. [add-postcss](https://github.com/yzhiJun/react-step-by-step/tree/08-add-postcss)
 
 9. [production-builds](https://github.com/yzhiJun/react-step-by-step/tree/09-production-builds)
-

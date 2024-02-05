@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Counter extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Counter extends React.Component {
 
   tick() {
     this.setState({
-      counter: this.state.counter + 1
+      counter: this.state.counter + 1,
     });
   }
 
@@ -21,9 +21,7 @@ class Counter extends React.Component {
   }
 
   render() {
-    return (
-      <h2>Counter: {this.state.counter}</h2>
-   );
+    return <h2>Counter: {this.state.counter}</h2>;
   }
 }
 
