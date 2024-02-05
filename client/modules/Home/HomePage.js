@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
+import { Link } from "react-router";
 
-if (process.env.CLIENT)
-  require('./Home.css')
+if (process.env.CLIENT) require("./Home.css");
 
 class HomePage extends React.Component {
   render() {
